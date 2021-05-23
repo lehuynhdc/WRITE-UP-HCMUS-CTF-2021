@@ -1,4 +1,4 @@
-### Write by Konoha
+### Written by Konoha
 
 # Faded
 + Vì đây là file được viết bằng python nên sử dụng `pyi-archive_viewer` để decompile lại file thực thi.
