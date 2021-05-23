@@ -1,3 +1,5 @@
+### Write by Konoha
+
 # Faded
 + Vì đây là file được viết bằng python nên sử dụng `pyi-archive_viewer` để decompile lại file thực thi.
 + Cú pháp: `pyi-archive_viewer authentication` Sau đó `X authentication` để extract file, tiếp tục `output.pyc` để lưu vào file *output.pyc* 
