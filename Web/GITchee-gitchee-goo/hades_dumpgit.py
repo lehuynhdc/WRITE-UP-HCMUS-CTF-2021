@@ -69,7 +69,7 @@ for i in object1.split("\n"):
   except:
     break
 #print(objects)
-  
+print("==========  𝖍𝖆𝖉𝖊𝖘#5218 =========")  
 #lay file object
 for filename in objects:
   get_content(filename)
