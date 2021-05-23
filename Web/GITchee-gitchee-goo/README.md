@@ -12,3 +12,6 @@
  
  - Tạo folder `~/hades101`, đặt hades_dumpgit.py vào thư mục trên, và run nó.
  - Sử dụng `extractor.sh` của tool (GitTool) để extract : `./extractor.sh ~/hades101 hades_extract`
+## Finally
+
+ - Flag dc giấu trong bức ảnh trước khi bị xóa :))
