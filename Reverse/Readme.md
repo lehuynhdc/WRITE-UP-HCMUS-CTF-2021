@@ -39,7 +39,7 @@ me(var0, dh(SHA-256, var1), 58150e58ae8a7275fcce5aea7d983ab5654f549cbeecedec27c8
 ```
 + Đoạn này sẽ kiểm tra Buf1(sử dụng chuỗi đã nhập và biến đổi các thứ) và Buf2 (được gán phía trên) có giống nhau không, sau đó sẽ biến đổi chuỗi nhập *V12* với *V6* thành flag và gán vào *Str*.
 + Sử dụng v6[0] đến v6[9] để XOR với 'HCMUS-CTF{' thì thấy được của chuỗi *hellohello*. Thử sử dụng chuỗi input là *hellohellohellohellohellohellohellohello* để nhập vào từ client.
-+ Tại server, path địa chỉ tại địa chỉ *00327994* từ `jnz     short loc_3279FC` thành `jz     short loc_3279FC`. Flag sẽ gửi xuống server.
++ Tại server, path tại địa chỉ *00327994* từ `jnz     short loc_3279FC` thành `jz     short loc_3279FC`. Flag sẽ gửi xuống server.
 ```
 [+] Please enter the password: hellohellohellohellohellohellohellohello
 [+] Connecting to the online service ...
