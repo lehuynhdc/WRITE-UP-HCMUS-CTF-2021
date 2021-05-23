@@ -9,7 +9,7 @@
 # AndroidRev
 + Các tool, web sử dụng: **Bytecode-Viewer-2.9.22.jar** để decompile và đọc code java, **apktool_2.5.0.jar** để dump file để có thể xem phần resources, *https://www.md5online.org/md5-decrypt.html* để decrypt MD5.
 + Đầu tiên dump file **androidrev.apk** sau đó đọc đưa file **androidrev.apk** vào **Bytecode-Viewer-2.9.22.jar**, đọc  code tại file **/com/hcmusctf/androidrev/FlagChecker.class** hàm **checkFlag** để hiểu rõ bản chất vấn đề.
-+ Giải thích một chút về `var0.getString(2131492904)` tại hàm "me": chương trình sẽ lấy chuỗi tương ứng với số *2131492904*; để tìm ra được chuỗi tương ứng với số này, vào file `R.class` và tìm kiếm số này và lấy tên biến được gán chuỗi đó (Ví dụ: số *2131492904* thì lấy tên biến tương ứng là *ml*) sau đó vào folder được dump file **androidrev.apk** ra bởi **apktool_2.5.0.jar**, ở **androidrev\res\values** sẽ thấy được file *strings.xml*, mở lên và tìm chuỗi tương ứng với tên biến (Ví dụ chữ *ml* thì sẽ được chuỗi *slauqe*). Tương tự các phần còn lại ta rút gọn được vấn đề:
++ Giải thích một chút về `var0.getString(2131492904)` tại hàm "me": chương trình sẽ lấy chuỗi tương ứng với số *2131492904*; để tìm ra được chuỗi tương ứng với số này, vào file `R.class` và tìm kiếm số này và lấy tên biến được gán chuỗi đó (Ví dụ: số *2131492904* thì lấy tên biến tương ứng là *ml*) sau đó vào folder được dump file **androidrev.apk** ra bởi **apktool_2.5.0.jar**, ở **androidrev\res\values** sẽ thấy được file *strings.xml*, mở lên và tìm chuỗi tương ứng với tên biến (Ví dụ chữ *ml* thì sẽ được chuỗi *slauqe*). Tương tự các phần còn lại, ta rút gọn được vấn đề:
 ```java
 me(var0, dh(MD5, var3[0]), 6e9a4d130a9b316e9201238844dd5124) 
 me(var0, dh(MD5, var3[1]), 7c51a5e6ea3214af970a86df89793b19) 
