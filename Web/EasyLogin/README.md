@@ -29,7 +29,7 @@ for i in range(1,50):
             print(f"query = {sql}")
             break
 ```
-Vì đề có 2 table nên mình sẽ chỉ lấy câi sql của table flag thôi.
+Vì đề có 2 table nên mình sẽ chỉ lấy câu sql của table flag thôi.
 
 ![image](https://user-images.githubusercontent.com/46492646/119289912-be031280-bc75-11eb-9508-a71b3118e088.png)
 
