@@ -52,9 +52,21 @@
 
 
 # Bank6
-![Bank6](https://user-images.githubusercontent.com/51597903/119295153-51d9dc00-bc80-11eb-94e2-e0dcd8a05686.png)
+* Ở bài này trong hàm Register() chúng ta chỉ được nhập 1036 kí tự vào biến name
+* Biến name thì chúng ta có thể lấy được địa chỉ vì chương trình sẽ in ra màn hình
+* Tuy nhiên ở bài này chúng ta không thể tính offset khá căng, mặt khác chúng ta lại có thể ghi shellcode vào 1 số vùng trong đó có stack
+* Sau 1 hồi debug thì nhận thấy nếu nhập đủ 1036 hoặc hơn thì khi từ Register() quay về welcome() và từ welcome thì nó đã bị ghi đè địa chỉ thành những kí tự chúng ta nhập vào khi nãy
+* Thế là ý tưởng giải quyết bài này do mình có thể lấy được địa chỉ nơi mình nhập và có thể ghi shellcode, nên mình quyết định ghi shellcode vào stack và return về nó. Vấn đề cuối cùng chính là làm sao để điều khiển việc ret về shellcode vì không thể tính được offset
+* Do đó mình quyết định ghi sh vào stack và còn lại mình sẽ ghi địa chỉ stack mà mình leak được ở trên thì như ở trên khi nhập 1036 kí tự vào thì chắc chắn địa chỉ trả về của hàm welcome() sẽ bị ghi đè thành những kí tự mình nhập ở trên, và thế là thành công
+
+![Bank6](https://user-images.githubusercontent.com/51597903/119349830-d6504d00-bcc8-11eb-844d-0309b13b6e8c.png)
 
 
 # SecretWeapon
+* Bài này chúng ta sẽ bị random địa chỉ do đó không thể nào chúng ta ret về hàm arsenal() được
+* Tuy nhiên chúng ta được chương trình in ra 1 địa chỉ đó là địa chỉ của hàm townsquare(), nhờ đó chúng ta có thể dễ dàng tính được base của vùng code nhờ vào ida và địa chỉ hàm townsquare()
+* Khi đã tính được base chúng ta sẽ  dễ dàng tính được địa chỉ hàm arsenal() vì offset của hàm cũng có trong ida
+* Sau đó chúng ta chỉ cần ghi đè địc chỉ trả về thành địa chỉ của hàm arsenal() và lấy được shell
+* offset của bài này 0x1c, các offset của arsenal() = 0x12D6, của townsquare() = 0x12ff
 
 ![SecretWeapon](https://user-images.githubusercontent.com/51597903/119295368-da587c80-bc80-11eb-8d3f-613ab75e292d.png)
